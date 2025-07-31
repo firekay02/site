@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How It Works – eSolvegh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    /* Additional page-specific styles for layout from screenshots */
+    .how-hero {
+      background: linear-gradient(120deg, #2343a7 0%, #25b04b 100%);
+      color: #fff;
+      padding: 64px 0 40px 0;
+      text-align: center;
+    }
+    .how-hero h1 {
+      font-size: 2.6em;
+      font-weight: 900;
+      margin-bottom: 0.4em;
+    }
+    .how-hero p {
+      font-size: 1.25em;
+      font-weight: 400;
+      margin-bottom: 2em;
+      color: #e9edfa;
+    }
+    .how-hero .btn-demo {
+      background: #37d25a;
+      color: #fff;
+      padding: 1em 2.2em;
+      border-radius: 9px;
+      border: none;
+      font-size: 1.1em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.18s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7em;
+      box-shadow: 0 2px 9px rgba(39,220,100,0.09);
+    }
+    .how-hero .btn-demo:hover {
+      background: #25b04b;
+    }
+
+    /* Steps */
+    .steps-section {
+      padding: 0 0 48px 0;
+      background: #fff;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 64px;
+      margin-bottom: 48px;
+    }
+    .step-row:nth-child(even) {
+      flex-direction: row-reverse;
+      background: #fafbfc;
+      border-radius: 32px;
+    }
+    .step-info {
+      flex: 1 1 350px;
+      min-width: 260px;
+      padding: 40px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .step-icon-num {
+      display: flex;
+      align-items: center;
+      font-size: 1.7em;
+      font-weight: 700;
+      color: #bfc7db;
+      margin-bottom: 0.5em;
+      gap: 0.5em;
+    }
+    .step-icon-num i {
+      font-size: 1.1em;
+      border-radius: 10px;
+      background: #f3f5fa;
+      padding: 0.4em 0.5em;
+      color: #2343a7;
+    }
+    .step-row:nth-child(2) .step-icon-num i {
+      color: #25b04b;
+    }
+    .step-row:nth-child(3) .step-icon-num i {
+      color: #a05eea;
+    }
+    .step-title {
+      font-size: 2em;
+      font-weight: 900;
+      margin-bottom: 0.25em;
+      color: #16203a;
+    }
+    .step-desc {
+      font-size: 1.15em;
+      color: #49556a;
+      margin-bottom: 1em;
+    }
+    .step-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .step-checklist li {
+      color: #25b04b;
+      font-size: 1.08em;
+      margin-bottom: 0.5em;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6em;
+    }
+    .step-checklist li span {
+      color: #49556a;
+      font-weight: 400;
+    }
+    .step-visual {
+      flex: 1 1 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 170px;
+    }
+    .step-visual-box {
+      width: 100%;
+      max-width: 370px;
+      min-height: 170px;
+      background: #f4f7fb;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bfc7db;
+      font-weight: 700;
+      font-size: 1.7em;
+      gap: 0.6em;
+      flex-direction: column;
+      box-shadow: 0 2px 10px rgba(60,60,100,0.04);
+    }
+    .step-visual-box i {
+      font-size: 2.3em;
+      margin-bottom: 0.3em;
+      color: #2343a7;
+    }
+    .step-row:nth-child(2) .step-visual-box i {
+      color: #25b04b;
+    }
+    .step-row:nth-child(3) .step-visual-box i {
+      color: #a05eea;
+    }
+
+    /* Security Features */
+    .security-section {
+      background: #fafbfc;
+      text-align: center;
+      padding: 40px 0 0 0;
+    }
+    .security-section h2 {
+      font-size: 2.2em;
+      font-weight: 900;
+      margin-bottom: 0.3em;
+      color: #16203a;
+    }
+    .security-section p {
+      color: #49556a;
+      font-size: 1.1em;
+      margin-bottom: 2.5em;
+    }
+    .security-features {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .security-feature {
+      flex: 1 1 180px;
+      min-width: 170px;
+      max-width: 240px;
+      background: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1.5em;
+    }
+    .security-feature .sec-icon-bg {
+      width: 54px;
+      height: 54px;
+      background: #eaf0fe;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.7em;
+      font-size: 1.6em;
+      color: #2343a7;
+    }
+    .security-feature.sec2 .sec-icon-bg { background: #e8faed; color: #25b04b; }
+    .security-feature.sec3 .sec-icon-bg { background: #f5f0fd; color: #a05eea; }
+    .security-feature.sec4 .sec-icon-bg { background: #fdecec; color: #f36e6e; }
+    .security-feature-title {
+      font-size: 1.1em;
+      font-weight: 700;
+      color: #16203a;
+    }
+    .security-feature-desc {
+      color: #49556a;
+      font-size: 1em;
+      margin-top: 0.2em;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .step-row, .security-features { flex-direction: column; gap: 24px; }
+      .step-row { align-items: stretch; }
+      .step-visual, .step-info { min-width: 0; }
+    }
+    @media (max-width: 600px) {
+      .how-hero h1 { font-size: 1.3em; }
+      .step-title { font-size: 1.3em; }
+      .security-section h2 { font-size: 1.3em; }
+      .step-visual-box { font-size: 1.1em; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="b.png" alt="eSolvegh" class="nav-logo-icon">
+          <span class="nav-logo-text">eSolvegh</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="how-it-works.html" class="active">How It Works</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="about.html">About</a></li>
+       <!---- <li><a href="login.html">Login</a></li> --->
+      </ul>
+      <a href="book.html" class="nav-cta"><i class="fa-solid fa-phone"></i> Start Session</a>
+    </nav>
+  </header>
+
+  <!-- How It Works Hero -->
+  <section class="how-hero">
+    <h1>How It Works</h1>
+    <p>
+      Get your tech issues resolved in three simple steps. Our secure, remote support process is designed to be fast, safe, and hassle-free.
+    </p>
+    <button class="btn-demo"><i class="fa fa-play"></i> Watch Demo Video</button>
+  </section>
+
+  <!-- Steps Section -->
+  <section class="steps-section">
+    <!-- Step 1 -->
+    <div class="step-row">
+      <div class="step-info">
+        <div class="step-icon-num">
+          <i class="fa fa-calendar-alt"></i> 01
+        </div>
+        <div class="step-title">Book Your Session</div>
+        <div class="step-desc">
+          Choose your preferred time and describe your tech issue in our simple booking form.
+        </div>
+        <ul class="step-checklist">
+          <li><i class="fa fa-check"></i> <span>Fill out a quick form with your contact details</span></li>
+          <li><i class="fa fa-check"></i> <span>Describe your tech issue in detail</span></li>
+          <li><i class="fa fa-check"></i> <span>Select your preferred date and time</span></li>
+          <li><i class="fa fa-check"></i> <span>Choose urgency level (normal, high, urgent)</span></li>
+          <li><i class="fa fa-check"></i> <span>Receive instant confirmation email</span></li>
+        </ul>
+      </div>
+      <div class="step-visual">
+        <div class="step-visual-box">
+          <i class="fa fa-calendar-alt"></i>
+          Step 01
+        </div>
+      </div>
+    </div>
+    <!-- Step 2 -->
+    <div class="step-row">
+      <div class="step-info">
+        <div class="step-icon-num">
+          <i class="fa fa-desktop"></i> 02
+        </div>
+        <div class="step-title">Connect Securely</div>
+        <div class="step-desc">
+          Our certified technician will securely connect to your device using bank-level encryption.
+        </div>
+        <ul class="step-checklist">
+          <li><i class="fa fa-check"></i> <span>Receive a secure connection link via email</span></li>
+          <li><i class="fa fa-check"></i> <span>Click the link - no software installation needed</span></li>
+          <li><i class="fa fa-check"></i> <span>Technician requests permission to view your screen</span></li>
+          <li><i class="fa fa-check"></i> <span>You maintain full control at all times</span></li>
+          <li><i class="fa fa-check"></i> <span>Session is encrypted with 256-bit SSL</span></li>
+        </ul>
+      </div>
+      <div class="step-visual">
+        <div class="step-visual-box">
+          <i class="fa fa-desktop"></i>
+          Step 02
+        </div>
+      </div>
+    </div>
+    <!-- Step 3 -->
+    <div class="step-row">
+      <div class="step-info">
+        <div class="step-icon-num">
+          <i class="fa fa-check-circle"></i> 03
+        </div>
+        <div class="step-title">Get It Fixed</div>
+        <div class="step-desc">
+          Watch as our expert diagnoses and resolves your issue quickly and efficiently.
+        </div>
+      </div>
+      <div class="step-visual">
+        <div class="step-visual-box">
+          <i class="fa fa-check-circle"></i>
+          Step 03
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Section -->
+  <section class="security-section">
+    <h2>Your Security is Our Priority</h2>
+    <p>
+      We use industry-leading security measures to protect your data and privacy during every session.
+    </p>
+    <div class="security-features">
+      <div class="security-feature">
+        <div class="sec-icon-bg"><i class="fa fa-shield-alt"></i></div>
+        <div class="security-feature-title">256-bit SSL Encryption</div>
+        <div class="security-feature-desc">Same security level used by banks</div>
+      </div>
+      <div class="security-feature sec2">
+        <div class="sec-icon-bg"><i class="fa fa-user-check"></i></div>
+        <div class="security-feature-title">Permission-Based Access</div>
+        <div class="security-feature-desc">You control what we can see and do</div>
+      </div>
+      <div class="security-feature sec3">
+        <div class="sec-icon-bg"><i class="fa fa-download"></i></div>
+        <div class="security-feature-title">No Software Installation</div>
+        <div class="security-feature-desc">Browser-based, no downloads required</div>
+      </div>
+      <div class="security-feature sec4">
+        <div class="sec-icon-bg"><i class="fa fa-clock"></i></div>
+        <div class="security-feature-title">Session Logging</div>
+        <div class="security-feature-desc">All activities logged for quality assurance</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <h2>Ready to Get Started?</h2>
+    <p>Book your first session today and experience fast, secure, professional tech support.</p>
+    <a href="book.html" class="btn btn-green btn-lg">Book Your Session Now <i class="fa fa-arrow-right"></i></a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html">
+          <img src="b.png" alt="FixItNow" class="footer-logo">
+        </a>
+        <div>
+          <strong>eSolvegh</strong>
+          <p>24/7 remote tech support for individuals and small businesses. Secure, instant, and hassle-free solutions.</p>
+          <div class="footer-badges">
+            <i class="fa fa-shield-alt"></i> SSL Secure
+            <i class="fa fa-id-badge"></i> Certified
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <strong>Quick Links</strong>
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="support.html">Support</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div class="footer-col">
+        <strong>Support</strong>
+        <a href="support.html">Contact Us</a>
+        <a href="book.html">Book Session</a>
+       <!---- <a href="login.html">Technician Login</a> --->
+        <a href="#">Live Chat</a>
+       <!-- <a href="#">Help Center</a> --->
+      </div>
+      <div class="footer-col">
+        <strong>Contact</strong>
+        <div><i class="fa fa-clock"></i> 24/7 Support</div>
+        <div><i class="fa fa-phone"></i> 0267737173</div>
+        <div><i class="fa fa-envelope"></i> support@esolvegh.com</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2024 eSolvegh. All rights reserved.
+      <span class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+       <!-- <a href="#">Cookie Policy</a> --->
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

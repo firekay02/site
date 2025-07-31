@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up – eSolvegh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    body {
+      background: linear-gradient(120deg, #f5f8ff 0%, #eef3fc 100%);
+      min-height: 100vh;
+      margin: 0;
+    }
+    .auth-header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(60,60,100,0.05);
+      margin-bottom: 0;
+    }
+    .auth-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+    }
+    .auth-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 44px 38px 34px 38px;
+      max-width: 400px;
+      width: 100%;
+      margin: 48px 0;
+      box-shadow: 0 8px 32px rgba(44,66,101,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .auth-avatar {
+      background: linear-gradient(135deg, #6d6afd 0%, #8a63ec 100%);
+      color: #fff;
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      font-size: 2em;
+      margin-bottom: 1.3em;
+    }
+    .auth-title {
+      font-size: 2em;
+      font-weight: 900;
+      color: #16203a;
+      margin-bottom: 0.2em;
+      text-align: center;
+    }
+    .auth-sub {
+      color: #6e7ba2;
+      font-size: 1em;
+      margin-bottom: 2em;
+      text-align: center;
+    }
+    .auth-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1em;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+    .input-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #b5bdda;
+      font-size: 1.1em;
+    }
+    .auth-input {
+      width: auto;
+      padding: 0.85em 1em 0.85em 2.85em;
+      border-radius: 8px;
+      border: 1.5px solid #e2e6f4;
+      font-size: 1em;
+      background: #f8fafd;
+      transition: border-color 0.14s;
+      font-family: inherit;
+      color: #16203a;
+    }
+    .auth-input:focus {
+      border-color: #8a63ec;
+      outline: none;
+    }
+    .auth-btn {
+      width: 100%;
+      padding: 1em 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: 700;
+      background: linear-gradient(90deg, #6d6afd 0%, #8a63ec 100%);
+      color: #fff;
+      margin-top: 0.3em;
+      cursor: pointer;
+      transition: background 0.14s;
+      box-shadow: 0 2px 9px rgba(44,66,101,0.09);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7em;
+    }
+    .auth-btn:hover {
+      background: linear-gradient(90deg, #8a63ec 0%, #6d6afd 100%);
+    }
+    .auth-footer {
+      margin-top: 1.5em;
+      text-align: center;
+    }
+    .auth-footer a {
+      color: #6d6afd;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.13s;
+    }
+    .auth-footer a:hover { color: #8a63ec; }
+    @media (max-width: 500px) {
+      .auth-card { padding: 28px 8px 22px 8px; }
+      .auth-title { font-size: 1.25em; }
+    }
+  </style>
+</head>
+<body>
+  <header class="auth-header">
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="b.png" alt="eSolvegh" class="nav-logo-icon">
+        <span class="nav-logo-text">eSolvegh</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+      <a href="book.html" class="nav-cta"><i class="fa-solid fa-phone"></i> Start Session</a>
+    </nav>
+  </header>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-avatar"><i class="fa fa-user-plus"></i></div>
+      <div class="auth-title">Create your account</div>
+      <div class="auth-sub">Sign up to access your support dashboard</div>
+      <form class="auth-form" id="signup-form-main">
+        <div class="input-group" style="position:relative;">
+          <label for="email">Email Address</label>
+          <i class="fa fa-envelope input-icon"></i>
+          <input type="email" id="email" class="auth-input" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group" style="position:relative;">
+          <label for="password">Password</label>
+          <i class="fa fa-lock input-icon"></i>
+          <input type="password" id="password" class="auth-input" name="password" placeholder="Enter your password" required>
+        </div>
+        <button class="auth-btn" type="submit">Sign Up <i class="fa fa-user-plus"></i></button>
+      </form>
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Sign in</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('signup-form-main').onsubmit = function(e) {
+      e.preventDefault();
+      alert("Signup attempted! (Backend integration required.)");
+      this.reset();
+    };
+  </script>
+
+  <footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="b.png" alt="FixItNow" class="footer-logo">
+      <div>
+        <strong>eSolvegh</strong>
+        <p>24/7 remote tech support for individuals and small businesses. Secure, instant, and hassle-free solutions.</p>
+        <div class="footer-badges">
+          <i class="fa fa-shield-alt"></i> SSL Secure
+          <i class="fa fa-id-badge"></i> Certified
+        </div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <strong>Quick Links</strong>
+      <a href="index.html">Home</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="support.html">Support</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="footer-col">
+      <strong>Support</strong>
+      <a href="support.html">Contact Us</a>
+      <a href="book.html">Book Session</a>
+      <a href="login.html">Technician Login</a>
+      <a href="#">Live Chat</a>
+      <a href="#">Help Center</a>
+    </div>
+    <div class="footer-col">
+      <strong>Contact</strong>
+      <div><i class="fa fa-clock"></i> 24/7 Support</div>
+      <div><i class="fa fa-phone"></i> 1-800-FIX-NOW</div>
+      <div><i class="fa fa-envelope"></i> support@esolvegh.com</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2024 eSolvegh. All rights reserved.
+    <span class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+    </span>
+  </div>
+</footer>
+</body>
+</html>
