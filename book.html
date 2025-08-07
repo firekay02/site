@@ -395,10 +395,10 @@
           </select>
         </div>
         <div class="book-form-col-full">
-          <label class="book-label" for="urgency">Preferred Contact</label>
-          <select id="urgency" name="urgency">
-            <option value="Normal">Email</option>
-            <option value="High">Phone</option>
+          <label class="book-label" for="preferred">Preferred Contact</label>
+          <select id="Preferred" name="preferred">
+            <option value="Email">Email</option>
+            <option value="Phone">Phone</option>
           </select>
         </div>
         <div class="book-info-box">
@@ -426,6 +426,7 @@
               <div class="summary-label">Issue Type:</div>
               <div class="summary-label">Date &amp; Time:</div>
               <div class="summary-label">Urgency:</div>
+              <div class="summary-label">Preferred Contact:</div>
             </div>
             <div class="summary-right" id="summary-values">
               <!-- Values populated by JS -->
@@ -455,6 +456,7 @@
         <input type="hidden" name="date" id="hiddenDate">
         <input type="hidden" name="time" id="hiddenTime">
         <input type="hidden" name="urgency" id="hiddenUrgency">
+        <input type="hidden" name="preferred" id="hiddenPreferred">
         <div class="book-actions">
           <button type="button" class="btn btn-green" id="prev-step-3">Previous</button>
           <button type="submit" class="btn btn-green">Confirm Booking</button>
@@ -564,7 +566,8 @@
           ${document.getElementById('email').value}<br>
           ${document.getElementById('issueType').value}<br>
           ${document.getElementById('date').value} at ${document.getElementById('time').value}<br>
-          ${document.getElementById('urgency').value}
+          ${document.getElementById('urgency').value}<br>
+          ${document.getElementById('Preferred').value}
         `;
         document.getElementById('summary-values').innerHTML = summary;
         // Populate hidden fields for form submission
@@ -576,6 +579,7 @@
         document.getElementById('hiddenDate').value = document.getElementById('date').value;
         document.getElementById('hiddenTime').value = document.getElementById('time').value;
         document.getElementById('hiddenUrgency').value = document.getElementById('urgency').value;
+        document.getElementById('hiddenPreferred').value = document.getElementById('Preferred').value;
       }
     };
     // Step 2 <- Step 1
@@ -615,7 +619,8 @@
         issueDesc: document.getElementById('hiddenIssueDesc').value,
         date: document.getElementById('hiddenDate').value,
         time: document.getElementById('hiddenTime').value,
-        urgency: document.getElementById('hiddenUrgency').value
+        urgency: document.getElementById('hiddenUrgency').value,
+        preferred: document.getElementById('hiddenPreferred').value
       };
       
       // Submit via fetch API
