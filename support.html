@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Support – eSolvegh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    .support-hero {
+      background: none;
+      padding: 44px 0 0 0;
+      text-align: center;
+    }
+    .support-hero h1 {
+      font-size: 2.7em;
+      font-weight: 900;
+      margin-bottom: 0.4em;
+      color: #172142;
+    }
+    .support-hero p {
+      font-size: 1.18em;
+      font-weight: 400;
+      margin-bottom: 2.4em;
+      color: #49556a;
+    }
+    .support-content {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 1240px;
+      margin: 0 auto 64px auto;
+      padding: 0 16px;
+      flex-wrap: wrap;
+    }
+    .support-contact-methods {
+      flex: 1 1 310px;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .support-contact-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(44,66,101,0.06);
+      padding: 26px 24px 18px 24px;
+      border-left: 4px solid transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35em;
+    }
+    .support-contact-card.live { border-color: #25b04b; }
+    .support-contact-card.phone { border-color: #2343a7; }
+    .support-contact-card.email { border-color: #a05eea; }
+    .support-contact-card .icon {
+      font-size: 1.5em;
+      margin-right: 0.55em;
+    }
+    .support-contact-card .title {
+      font-size: 1.15em;
+      font-weight: 700;
+      color: #16203a;
+      display: flex; align-items: center;
+      gap: 0.3em;
+    }
+    .support-contact-card .desc {
+      color: #46546b;
+      font-size: 1em;
+      margin-bottom: 0.2em;
+    }
+    .support-contact-card .actions {
+      margin-top: 1em;
+    }
+    .support-contact-card .actions .btn-livechat {
+      background: #37d25a;
+      color: #fff;
+      padding: 0.7em 1.2em;
+      border-radius: 8px;
+      border: none;
+      font-weight: 700;
+      font-size: 1em;
+      box-shadow: 0 2px 9px rgba(39,220,100,0.09);
+      cursor: pointer;
+      transition: background 0.18s;
+      width: 100%;
+      text-align: center;
+      display: block;
+    }
+    .support-contact-card .actions .btn-livechat:hover { background: #25b04b; }
+    .support-contact-card .sub-info {
+      color: #888ea3;
+      font-size: 0.95em;
+      margin: 0.1em 0 0.3em 2em;
+      display: block;
+    }
+    /* Form Section */
+    .support-form-box {
+      flex: 2 1 500px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(44,66,101,0.04);
+      padding: 32px 32px 24px 32px;
+      min-width: 320px;
+      max-width: 670px;
+    }
+    .support-form-box h2 {
+      font-size: 1.35em;
+      font-weight: 800;
+      margin-bottom: 1.1em;
+      color: #16203a;
+    }
+    .support-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    .support-form .form-group {
+      flex: 1 1 45%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.18em;
+      min-width: 200px;
+    }
+    .support-form .form-group-full { flex: 1 1 100%; }
+    .support-form label {
+      font-weight: 600;
+      margin-bottom: 0.2em;
+      color: #49556a;
+    }
+    .support-form input,
+    .support-form select {
+      padding: 0.7em;
+      border-radius: 7px;
+      border: 1px solid #e6e6e6;
+      font-size: 1em;
+      background: #f8fafc;
+      margin-bottom: 0.2em;
+    }
+    .support-form textarea {
+      padding: 0.7em;
+      border-radius: 7px;
+      border: 1px solid #e6e6e6;
+      font-size: 1em;
+      background: #f8fafc;
+      min-height: 88px;
+    }
+    .support-form input:focus,
+    .support-form select:focus,
+    .support-form textarea:focus {
+      border-color: #25b04b;
+      outline: none;
+    }
+    .support-form .form-row { display: flex; gap: 18px; width: 100%; }
+    .support-form .form-row .form-group { flex: 1 1 45%; }
+    .support-form .form-group select { min-width: 120px; }
+    .support-form .form-row .form-group-full { flex: 1 1 100%; }
+    .support-form .form-actions {
+      flex: 1 1 100%;
+      margin-top: 1em;
+    }
+    .support-form .send-btn {
+      width: 100%;
+      padding: 1em 2em;
+      font-weight: 700;
+      font-size: 1.13em;
+      color: #fff;
+      background: linear-gradient(90deg, #2343a7 0%, #25b04b 100%);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(44,66,101,0.09);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7em;
+      transition: background 0.17s;
+    }
+    .support-form .send-btn:hover { background: linear-gradient(90deg, #25b04b 0%, #2343a7 100%); }
+    /* Popup Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 18px;
+      padding: 40px 35px;
+      text-align: center;
+      max-width: 450px;
+      width: 90%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: modalSlideIn 0.3s ease-out;
+    }
+    .modal-title {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #187e39;
+      margin-bottom: 15px;
+    }
+    .modal-message {
+      font-size: 1.1em;
+      color: #49556a;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+    .modal-close-btn {
+      background: #4668e2;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .modal-close-btn:hover {
+      background: #3a56d1;
+    }
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Loading state for submit button */
+    .send-btn.loading {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    @media (max-width: 1050px) {
+      .support-content { flex-direction: column; align-items: stretch; }
+      .support-form-box, .support-contact-methods { max-width: 100%; }
+    }
+    @media (max-width: 700px) {
+      .support-form { flex-direction: column; }
+      .support-form .form-row { flex-direction: column; gap: 9px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="b.png" alt="eSolvegh" class="nav-logo-icon">
+          <span class="nav-logo-text">eSolvegh</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="support.html" class="active">Support</a></li>
+        <li><a href="about.html">About</a></li>
+       <!--- <li><a href="login.html">Login</a></li> --->
+      </ul>
+      <a href="book.html" class="nav-cta"><i class="fa-solid fa-phone"></i> Start Session</a>
+    </nav>
+  </header>
+
+  <section class="support-hero">
+    <h1>Get in Touch</h1>
+    <p>Need help? Our support team is here to assist you 24/7. Choose the best way to reach us.</p>
+  </section>
+
+  <section class="support-content">
+    <div class="support-contact-methods">
+      <!-- Live Chat -->
+      <div class="support-contact-card live">
+        <div class="title"><i class="fa fa-comments icon"></i> Live Chat</div>
+        <div class="desc">Available 24/7</div>
+        <div class="desc">Get instant help from our support team.<br>Average response time: 2 minutes.</div>
+        <div class="actions"><button class="btn-livechat">Start Live Chat</button></div>
+      </div>
+      <!-- Phone -->
+      <div class="support-contact-card phone">
+        <div class="title"><i class="fa fa-phone icon"></i> Phone Support</div>
+        <div class="desc">  0267737173</div>
+        <div class="desc">Speak directly with a technician for immediate assistance.</div>
+        <div class="sub-info"><i class="fa fa-clock"></i> 24/7 Emergency Support</div>
+        <div class="sub-info"><i class="fa fa-stopwatch"></i> Average wait time: 30 seconds</div>
+      </div>
+      <!-- Email -->
+      <div class="support-contact-card email">
+        <div class="title"><i class="fa fa-envelope icon"></i> Email Support</div>
+        <div class="desc">support@esolvegh.com</div>
+        <div class="desc">Send us detailed information about your issue for the fastest email resolution.</div>
+      </div>
+    </div>
+    <!-- Send Message Form -->
+    <div class="support-form-box">
+      <h2>Send us a Message</h2>
+      <form class="support-form" id="support-form-main">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="issueType">Issue Type *</label>
+            <select name="issueType" id="issueType" required>
+              <option value="">Select issue type</option>
+              <option value="software">Software Issue</option>
+              <option value="hardware">Hardware Issue</option>
+              <option value="network">Network Issue</option>
+              <option value="billing">Billing</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" required placeholder="Brief description of your issue">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group form-group-full">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Please provide detailed information about your issue..."></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="send-btn" type="submit"><i class="fa fa-paper-plane"></i> Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Success Popup Modal -->
+  <div id="success-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-title">Message Sent!</div>
+      <div class="modal-message">Thank you for getting in touch. We will get back to you soon.</div>
+      <button class="modal-close-btn" onclick="closeSuccessModal()">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html">
+          <img src="b.png" alt="FixItNow" class="footer-logo">
+        </a>
+        <div>
+          <strong>eSolvegh</strong>
+          <p>24/7 remote tech support for individuals and small businesses. Secure, instant, and hassle-free solutions.</p>
+          <div class="footer-badges">
+            <i class="fa fa-shield-alt"></i> SSL Secure
+            <i class="fa fa-id-badge"></i> Certified
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <strong>Quick Links</strong>
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="support.html">Support</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div class="footer-col">
+        <strong>Support</strong>
+        <a href="support.html">Contact Us</a>
+        <a href="book.html">Book Session</a>
+       <!--- <a href="login.html">Technician Login</a> --->
+        <a href="#">Live Chat</a>
+       <!--- <a href="#">Help Center</a> --->
+      </div>
+      <div class="footer-col">
+        <strong>Contact</strong>
+        <div><i class="fa fa-clock"></i> 24/7 Support</div>
+        <div><i class="fa fa-phone"></i> 0267737173</div>
+        <div><i class="fa fa-envelope"></i> support@esolvegh.com</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2024 eSolvegh. All rights reserved.
+      <span class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+       <!---- <a href="#">Cookie Policy</a> --->
+      </span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('support-form-main').onsubmit = function(e) {
+      e.preventDefault();
+      
+      // Show loading state on button
+      const submitBtn = this.querySelector('.send-btn');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
+      submitBtn.classList.add('loading');
+      submitBtn.disabled = true;
+      
+      // Prepare form data
+      const formData = {
+        fullname: document.getElementById('fullname').value,
+        email: document.getElementById('email').value,
+        issueType: document.getElementById('issueType').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+      };
+      
+      // Submit via fetch API
+      fetch("https://submit-form.com/um0MP7QsH", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+      .then(function (response) {
+        if (response.ok) {
+          // Reset button state
+          submitBtn.innerHTML = originalText;
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
+          // Show success popup modal
+          showSuccessModal();
+          // Reset form
+          document.getElementById('support-form-main').reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(function (error) {
+        console.error(error);
+        // Reset button state
+        submitBtn.innerHTML = originalText;
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+        // Show error alert (you can replace this with a modal if preferred)
+        alert('❌ There was an error sending your message. Please try again or contact support directly.');
+      });
+    };
+    
+    // Function to show success popup modal
+    function showSuccessModal() {
+      const modal = document.getElementById('success-modal');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+    
+    // Function to close success popup modal
+    function closeSuccessModal() {
+      const modal = document.getElementById('success-modal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+    
+    // Close modal when clicking outside of it
+    document.getElementById('success-modal').onclick = function(e) {
+      if (e.target === this) {
+        closeSuccessModal();
+      }
+    };
+  </script>
+</body>
+</html>

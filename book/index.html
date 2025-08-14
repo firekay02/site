@@ -1,0 +1,152 @@
+﻿---
+layout: default
+permalink: /book/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book a Session  eSolvegh Remote Tech Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../b.png">
+  <!-- Organization structured data for Google logo display -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "eSolvegh",
+    "url": "https://esolvegh.com",
+    "logo": "https://esolvegh.com/b.png"
+  }
+  </script>
+  <link href="../style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="/">
+          <img src="../b.png" alt="eSolvegh" class="nav-logo-icon">
+          <span class="nav-logo-text">eSolvegh</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/support">Support</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <a href="/book" class="nav-cta active"><i class="fa-solid fa-phone"></i> Start Session</a>
+    </nav>
+  </header>
+
+  <!-- Book Page Content -->
+  <section class="book-page">
+    <div class="container">
+      <h1>Book Your Tech Support Session</h1>
+      <p class="section-sub">Get expert help when you need it</p>
+      
+      <div class="booking-form">
+        <form>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="issue">Describe Your Tech Issue</label>
+            <textarea id="issue" name="issue" rows="4" required placeholder="Please describe what problems you're experiencing..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="device">Device Type</label>
+            <select id="device" name="device" required>
+              <option value="">Select Device Type</option>
+              <option value="desktop">Desktop Computer</option>
+              <option value="laptop">Laptop</option>
+              <option value="mobile">Mobile Device</option>
+              <option value="network">Network/Wi-Fi Issue</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="urgency">Urgency Level</label>
+            <select id="urgency" name="urgency" required>
+              <option value="">Select Urgency</option>
+              <option value="low">Low - Can wait a few days</option>
+              <option value="medium">Medium - Need help within 24 hours</option>
+              <option value="high">High - Need help ASAP</option>
+            </select>
+          </div>
+          
+          <div class="pricing-info">
+            <h3>Pricing</h3>
+            <div class="price-item">
+              <span>Basic Support Session (up to 1 hour)</span>
+              <span class="price">GHS 50</span>
+            </div>
+            <div class="price-item">
+              <span>Extended Session (up to 2 hours)</span>
+              <span class="price">GHS 80</span>
+            </div>
+            <p class="price-note">*If we can't fix your issue, you don't pay!</p>
+          </div>
+          
+          <button type="submit" class="btn btn-green btn-lg">
+            Book Session Now <i class="fa fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+      
+      <div class="contact-alternative">
+        <h3>Prefer to Call?</h3>
+        <p>You can also reach us directly at:</p>
+        <a href="tel:0267737173" class="phone-link">
+          <i class="fa fa-phone"></i> 0267737173
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/">
+          <img src="../b.png" alt="eSolvegh" class="footer-logo">
+        </a>
+        <div>
+          <strong>eSolvegh</strong>
+          <p>24/7 remote tech support for individuals and small businesses.</p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <strong>Quick Links</strong>
+        <a href="/">Home</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/support">Support</a>
+        <a href="/about">About Us</a>
+      </div>
+      <div class="footer-col">
+        <strong>Contact</strong>
+        <div><i class="fa fa-phone"></i> 0267737173</div>
+        <div><i class="fa fa-envelope"></i> support@esolvegh.com</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

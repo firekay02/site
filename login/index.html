@@ -1,0 +1,113 @@
+﻿---
+layout: default
+permalink: /login/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Technician Login  eSolvegh Remote Tech Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../b.png">
+  <!-- Organization structured data for Google logo display -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "eSolvegh",
+    "url": "https://esolvegh.com",
+    "logo": "https://esolvegh.com/b.png"
+  }
+  </script>
+  <link href="../style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="/">
+          <img src="../b.png" alt="eSolvegh" class="nav-logo-icon">
+          <span class="nav-logo-text">eSolvegh</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/support">Support</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <a href="/book" class="nav-cta"><i class="fa-solid fa-phone"></i> Start Session</a>
+    </nav>
+  </header>
+
+  <!-- Login Page Content -->
+  <section class="login-page">
+    <div class="container">
+      <div class="login-form-container">
+        <h1>Technician Login</h1>
+        <p class="login-sub">Access the technician dashboard</p>
+        
+        <form class="login-form">
+          <div class="form-group">
+            <label for="username">Username or Email</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Remember me</label>
+          </div>
+          
+          <button type="submit" class="btn btn-green btn-lg">
+            Login <i class="fa fa-sign-in-alt"></i>
+          </button>
+          
+          <div class="login-links">
+            <a href="#" class="forgot-password">Forgot your password?</a>
+          </div>
+        </form>
+        
+        <div class="customer-login">
+          <p>Are you a customer looking for support?</p>
+          <a href="/support" class="btn btn-outline">Customer Support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/">
+          <img src="../b.png" alt="eSolvegh" class="footer-logo">
+        </a>
+        <div>
+          <strong>eSolvegh</strong>
+          <p>24/7 remote tech support for individuals and small businesses.</p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <strong>Quick Links</strong>
+        <a href="/">Home</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/support">Support</a>
+        <a href="/about">About Us</a>
+      </div>
+      <div class="footer-col">
+        <strong>Contact</strong>
+        <div><i class="fa fa-phone"></i> 0267737173</div>
+        <div><i class="fa fa-envelope"></i> support@esolvegh.com</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

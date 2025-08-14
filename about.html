@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About – eSolvegh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    .about-hero {
+      background: linear-gradient(120deg, #2343a7 0%, #25b04b 100%);
+      color: #fff;
+      padding: 80px 0 54px 0;
+      text-align: center;
+    }
+    .about-hero h1 {
+      font-size: 3em;
+      font-weight: 900;
+      margin-bottom: 0.3em;
+      line-height: 1.1;
+    }
+    .about-hero .accent {
+      color: #38d430;
+      font-weight: 900;
+      display: inline;
+    }
+    .about-hero p {
+      font-size: 1.18em;
+      color: #e4ecf9;
+      margin: 0 auto;
+      max-width: 700px;
+      margin-top: 1.5em;
+    }
+    .mission-section {
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 16px 32px 16px;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .mission-text {
+      flex: 2 1 380px;
+      min-width: 280px;
+    }
+    .mission-text h2 {
+      font-size: 2.2em;
+      margin-bottom: 0.3em;
+      font-weight: 900;
+      color: #16203a;
+    }
+    .mission-text p {
+      color: #49556a;
+      font-size: 1.1em;
+      margin-bottom: 1.2em;
+    }
+    .goal-row {
+      display: flex;
+      align-items: center;
+      margin-top: 1em;
+      gap: 1em;
+    }
+    .goal-icon {
+      background: #e8faed;
+      color: #25b04b;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      margin-right: 0.1em;
+    }
+    .goal-label {
+      font-weight: 700;
+      color: #16203a;
+      margin-right: 0.6em;
+    }
+    .goal-desc {
+      color: #49556a;
+      font-size: 1em;
+    }
+    .mission-stats {
+      flex: 1 1 270px;
+      min-width: 230px;
+      background: #f7fafd;
+      border-radius: 22px;
+      padding: 38px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+      box-shadow: 0 2px 12px rgba(44,66,101,0.03);
+      margin-top: 24px;
+    }
+    .stat-row {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .stat {
+      flex: 1 1 110px;
+      text-align: center;
+      margin-bottom: 0.9em;
+    }
+    .stat .stat-value {
+      font-size: 2em;
+      color: #2343a7;
+      font-weight: 900;
+      margin-bottom: 0.15em;
+      display: block;
+    }
+    .stat .stat-label {
+      color: #49556a;
+      font-size: 1em;
+      font-weight: 500;
+    }
+    /* Values section */
+    .values-section {
+      background: #fafbfc;
+      padding: 60px 0 36px 0;
+      text-align: center;
+    }
+    .values-section h2 {
+      font-size: 2.2em;
+      font-weight: 900;
+      margin-bottom: 0.2em;
+      color: #16203a;
+    }
+    .values-section .sub {
+      color: #49556a;
+      margin-bottom: 2.3em;
+      font-size: 1.1em;
+    }
+    .values-row {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.6em;
+    }
+    .value-card {
+      flex: 1 1 220px;
+      min-width: 180px;
+      max-width: 300px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 22px 26px 22px;
+      box-shadow: 0 2px 9px rgba(44,66,101,0.04);
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.7em;
+    }
+    .value-icon {
+      font-size: 2em;
+      margin-bottom: 0.1em;
+    }
+    .value1 .value-icon { color: #2343a7; }
+    .value2 .value-icon { color: #25b04b; }
+    .value3 .value-icon { color: #e85b7e; }
+    .value4 .value-icon { color: #f2ae2e; }
+    .value-label {
+      font-weight: 700;
+      color: #16203a;
+      font-size: 1.13em;
+    }
+    .value-desc {
+      color: #49556a;
+      font-size: 1em;
+    }
+    /* Team section */
+    .team-section {
+      background: #fff;
+      padding: 56px 0 24px 0;
+      text-align: center;
+    }
+    .team-section h2 {
+      font-size: 2em;
+      font-weight: 900;
+      color: #16203a;
+      margin-bottom: 0.2em;
+    }
+    .team-section .sub {
+      color: #49556a;
+      margin-bottom: 2.7em;
+      font-size: 1.13em;
+    }
+    .team-row {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.6em;
+    }
+    .team-card {
+      flex: 1 1 150px;
+      min-width: 120px;
+      max-width: 180px;
+      background: #f7fafd;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.2em auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .team-avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: linear-gradient(120deg, #2343a7 0%, #25b04b 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 2.5em;
+    }
+    .team-name {
+      font-weight: 700;
+      color: #16203a;
+      margin-bottom: 0.12em;
+      font-size: 1.09em;
+    }
+    .team-role {
+      color: #49556a;
+      font-size: 0.98em;
+      margin-bottom: 0.8em;
+    }
+    /* Why Trust section */
+    .whytrust-section {
+      background: #fafbfc;
+      padding: 54px 0 0 0;
+      text-align: center;
+    }
+    .whytrust-section h2 {
+      font-size: 2em;
+      font-weight: 900;
+      color: #16203a;
+      margin-bottom: 0.2em;
+    }
+    .whytrust-row {
+      display: flex;
+      gap: 34px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.8em;
+    }
+    .whytrust-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 9px rgba(44,66,101,0.04);
+      padding: 32px 22px 26px 22px;
+      flex: 1 1 220px;
+      min-width: 180px;
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6em;
+    }
+    .whytrust-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #eaf0fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2343a7;
+      font-size: 1.5em;
+      margin-bottom: 0.3em;
+    }
+    .whytrust2 .whytrust-icon { background: #e8faed; color: #25b04b; }
+    .whytrust3 .whytrust-icon { background: #f5f0fd; color: #a05eea; }
+    .whytrust-label {
+      font-weight: 700;
+      color: #16203a;
+      font-size: 1.13em;
+    }
+    .whytrust-desc {
+      color: #49556a;
+      font-size: 1em;
+    }
+    @media (max-width: 1100px) {
+      .mission-section { flex-direction: column; align-items: stretch; gap: 24px; }
+      .mission-stats { margin: 0 auto; }
+    }
+    @media (max-width: 800px) {
+      .values-row, .whytrust-row, .team-row { flex-direction: column; gap: 20px; }
+    }
+    @media (max-width: 600px) {
+      .about-hero h1 { font-size: 1.45em; }
+      .mission-text h2 { font-size: 1.3em; }
+      .values-section h2, .team-section h2, .whytrust-section h2 { font-size: 1.2em; }
+      .mission-stats { padding: 20px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="a.png" alt="eSolvegh" class="nav-logo-icon">
+          <span class="nav-logo-text">eSolvegh</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+       <!-- <li><a href="login.html">Login</a></li> --->
+      </ul>
+      <a href="book.html" class="nav-cta"><i class="fa-solid fa-phone"></i> Start Session</a>
+    </nav>
+  </header>
+  <!-- Hero -->
+  <section class="about-hero">
+    <h1>
+      Making Tech Help <span class="accent">Fast, Safe, and Stress-Free</span>
+    </h1>
+    <p>
+      Founded in 2020, eSolvegh was born from a simple idea: everyone deserves reliable, secure, and affordable tech support, no matter where they are.
+    </p>
+  </section>
+  <!-- Mission Stats Section -->
+  <section class="mission-section">
+    <div class="mission-text">
+      <h2>Our Mission</h2>
+      <p>
+        We believe technology should empower, not frustrate. Our mission is to provide instant, secure, and hassle-free tech support that gets you back to what matters most.
+      </p>
+      <p>
+        Whether you're a busy professional, a small business owner, or someone who just wants their computer to work properly, we're here to help with certified experts available around the clock.
+      </p>
+      <div class="goal-row">
+        <div class="goal-icon"><i class="fa fa-bullseye"></i></div>
+        <div>
+          <div class="goal-label">Our Goal</div>
+          <div class="goal-desc">Resolve 100% of issues on first contact</div>
+        </div>
+      </div>
+    </div>
+    <div class="mission-stats">
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-value">50,000+</span>
+          <div class="stat-label">Issues Resolved</div>
+        </div>
+        <div class="stat">
+          <span class="stat-value">98%</span>
+          <div class="stat-label">Customer Satisfaction</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-value">24/7</span>
+          <div class="stat-label">Support Available</div>
+        </div>
+        <div class="stat">
+          <span class="stat-value">&lt; 2 min</span>
+          <div class="stat-label">Average Response Time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Values -->
+  <section class="values-section">
+    <h2>Our Values</h2>
+    <div class="sub">
+      These core principles guide everything we do and every interaction we have with our customers.
+    </div>
+    <div class="values-row">
+      <div class="value-card value1">
+        <div class="value-icon"><i class="fa fa-shield-alt"></i></div>
+        <div class="value-label">Security First</div>
+        <div class="value-desc">We prioritize your privacy and data security in everything we do.</div>
+      </div>
+      <div class="value-card value2">
+        <div class="value-icon"><i class="fa fa-clock"></i></div>
+        <div class="value-label">Always Available</div>
+        <div class="value-desc">24/7 support means you're never alone with your tech problems.</div>
+      </div>
+      <div class="value-card value3">
+        <div class="value-icon"><i class="fa fa-heart"></i></div>
+        <div class="value-label">Customer Focused</div>
+        <div class="value-desc">Your satisfaction is our success. We go above and beyond to help.</div>
+      </div>
+      <div class="value-card value4">
+        <div class="value-icon"><i class="fa fa-bolt"></i></div>
+        <div class="value-label">Fast Solutions</div>
+        <div class="value-desc">Quick diagnosis and efficient problem-solving to get you back on track.</div>
+      </div>
+    </div>
+  </section>
+  <!-- Team -->
+  <section class="team-section">
+    <h2>Meet Our Expert Team</h2>
+    <div class="sub">
+      Our certified technicians bring years of experience and a passion for helping people solve their tech challenges.
+    </div>
+    <div class="team-row">
+      <div>
+        <div class="team-card"><div class="team-avatar"><i class="fa fa-user"></i></div></div>
+        <div class="team-name">Alex Opoku</div>
+        <div class="team-role">Lead Technician</div>
+      </div>
+      <div>
+        <div class="team-card"><div class="team-avatar"><i class="fa fa-user"></i></div></div>
+        <div class="team-name">Frank Nortey</div>
+        <div class="team-role">Network Specialist</div>
+      </div>
+      <div>
+        <div class="team-card"><div class="team-avatar"><i class="fa fa-user"></i></div></div>
+        <div class="team-name">Taylor Avor</div>
+        <div class="team-role">Data Recovery Expert</div>
+      </div>
+      <div>
+        <div class="team-card"><div class="team-avatar"><i class="fa fa-user"></i></div></div>
+        <div class="team-name">Kingsley Asante</div>
+        <div class="team-role">Support Manager</div>
+      </div>
+    </div>
+  </section>
+  <!-- Why Trust -->
+  <section class="whytrust-section">
+    <h2>Why Trust eSolvegh?</h2>
+    <div class="whytrust-row">
+      <div class="whytrust-card">
+        <div class="whytrust-icon"><i class="fa fa-award"></i></div>
+        <div class="whytrust-label">Certified Experts</div>
+        <div class="whytrust-desc">All our technicians are certified professionals with extensive training and years of real-world experience.</div>
+      </div>
+      <div class="whytrust-card whytrust2">
+        <div class="whytrust-icon"><i class="fa fa-shield-alt"></i></div>
+        <div class="whytrust-label">Bank-Level Security</div>
+        <div class="whytrust-desc">We use the same encryption standards as major banks to protect your data and ensure complete privacy.</div>
+      </div>
+      <div class="whytrust-card whytrust3">
+        <div class="whytrust-icon"><i class="fa fa-globe"></i></div>
+        <div class="whytrust-label">Global Reach</div>
+        <div class="whytrust-desc">Serving customers worldwide with 24/7 support in multiple languages and time zones.</div>
+      </div>
+    </div>
+  </section>
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <h2>Ready to Experience the Difference?</h2>
+    <p>Join thousands of satisfied customers who trust eSolvegh for their tech support needs.</p>
+    <a href="book.html" class="btn btn-green btn-lg" style="margin-right:18px;">Start Your First Session</a>
+    <a href="how-it-works.html" class="btn btn-outline btn-lg">Learn More</a>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html">
+          <img src="b.png" alt="FixItNow" class="footer-logo">
+        </a>
+        <div>
+          <strong>eSolvegh</strong>
+          <p>24/7 remote tech support for individuals and small businesses. Secure, instant, and hassle-free solutions.</p>
+          <div class="footer-badges">
+            <i class="fa fa-shield-alt"></i> SSL Secure
+            <i class="fa fa-id-badge"></i> Certified
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <strong>Quick Links</strong>
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="support.html">Support</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div class="footer-col">
+        <strong>Support</strong>
+        <a href="support.html">Contact Us</a>
+        <a href="book.html">Book Session</a>
+        <a href="login.html">Technician Login</a>
+        <a href="#">Live Chat</a>
+       <!--- <a href="#">Help Center</a> --->
+      </div>
+      <div class="footer-col">
+        <strong>Contact</strong>
+        <div><i class="fa fa-clock"></i> 24/7 Support</div>
+        <div><i class="fa fa-phone"></i> 0267737173</div>
+        <div><i class="fa fa-envelope"></i> support@esolvegh.com</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2024 eSolvegh. All rights reserved.
+      <span class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+       <!--- <a href="#">Cookie Policy</a> --->
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
